@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_o_meal/categories_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,29 +10,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Meal O Mile",
-      home: MyMealHome(),
+      home: CategoriesScreen(),
       theme: ThemeData(
-        primarySwatch: Colors.lime,
-      ),
-    );
-  }
-}
-
-class MyMealHome extends StatefulWidget {
-  @override
-  _MyMealHomeState createState() => _MyMealHomeState();
-}
-
-class _MyMealHomeState extends State<MyMealHome> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Meal O Mile"),
-      ),
-      body: Center(
-        child: Text("My Meal App"),
-      ),
+          primarySwatch: Colors.pink,
+          accentColor: Colors.amberAccent,
+          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                bodyText1: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                bodyText2: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                headline6: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'RobotoCondensed',
+                ),
+              )),
     );
   }
 }
