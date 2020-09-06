@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal_o_meal/categories_screen.dart';
+import 'package:meal_o_meal/category_meals_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Meal O Mile",
-      home: CategoriesScreen(),
       theme: ThemeData(
           primarySwatch: Colors.pink,
           accentColor: Colors.amberAccent,
@@ -29,6 +29,11 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'RobotoCondensed',
                 ),
               )),
+     // home: CategoriesScreen(),
+      routes: {
+        '/':(ctx)=>CategoriesScreen(),
+        '/category_meals': (ctx)=> CategoryMealsScreen(),
+      },
     );
   }
 }
