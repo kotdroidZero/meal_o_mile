@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:meal_o_meal/categories_screen.dart';
-import 'package:meal_o_meal/category_meals_screen.dart';
+import 'package:meal_o_meal/screens/categories_screen.dart';
+import 'package:meal_o_meal/screens/category_meals_screen.dart';
+import 'package:meal_o_meal/screens/filters_screen.dart';
+import 'package:meal_o_meal/screens/meal_detail_screen.dart';
+
+import 'screens/tabs_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Meal O Mile",
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.pink,
           accentColor: Colors.amberAccent,
@@ -29,10 +34,12 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'RobotoCondensed',
                 ),
               )),
-     // home: CategoriesScreen(),
+      // home: CategoriesScreen(),
       routes: {
-        '/':(ctx)=>CategoriesScreen(),
-        '/category_meals': (ctx)=> CategoryMealsScreen(),
+        '/': (ctx) => TabsScreen(),
+        '/category_meals': (ctx) => CategoryMealsScreen(),
+        '/meal_detail': (ctx) => MealDetailScreen(),
+        '/filters': (ctx) => FiltersScreen(),
       },
     );
   }
